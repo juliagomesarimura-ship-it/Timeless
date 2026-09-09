@@ -1,0 +1,215 @@
+/* Estilos das páginas de artista — usado com ../../style.css */
+
+.artista-subnav {
+  background: var(--near-black);
+  padding: 0 0 20px;
+}
+
+.artista-subnav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.artista-subnav a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: rgba(246, 241, 231, 0.8);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.artista-subnav a:hover,
+.artista-subnav a:focus-visible {
+  color: var(--gold);
+}
+
+/* ---------- Hero ---------- */
+
+.artista-hero {
+  position: relative;
+  height: 62vh;
+  min-height: 400px;
+  background: var(--near-black);
+  overflow: hidden;
+}
+
+.artista-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85) brightness(0.55);
+}
+
+.artista-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 10, 8, 0.2) 0%, rgba(15, 10, 8, 0.75) 100%);
+}
+
+.artista-nome {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12%;
+  z-index: 2;
+  text-align: center;
+  font-family: var(--font-display);
+  color: var(--cream);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: 0.03em;
+  margin: 0;
+  padding: 0 24px;
+}
+
+/* ---------- Citação de abertura ---------- */
+
+.artista-citacao {
+  padding: 56px 0;
+}
+
+.artista-citacao blockquote {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+/* ---------- Biografia ---------- */
+
+.artista-biografia {
+  background: var(--oxblood-dark);
+  color: var(--cream);
+  padding: 70px 0;
+}
+
+.artista-biografia .wrap {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.artista-biografia-foto {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
+}
+
+.artista-biografia-foto img {
+  width: 100%;
+  display: block;
+}
+
+.artista-biografia h2 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  margin: 0 0 6px;
+  color: var(--cream);
+}
+
+.artista-biografia-datas {
+  font-size: 0.85rem;
+  color: var(--gold);
+  margin: 0 0 20px;
+  letter-spacing: 0.04em;
+}
+
+.artista-biografia p {
+  font-size: 0.93rem;
+  line-height: 1.75;
+  color: rgba(246, 241, 231, 0.88);
+  margin: 0 0 18px;
+}
+
+/* ---------- Suas obras ---------- */
+
+.artista-obras {
+  padding: 90px 0 40px;
+}
+
+.artista-obras h2 {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--ink);
+  margin: 0 0 44px;
+}
+
+.obras-carousel {
+  position: relative;
+  background: var(--oxblood-dark);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.obras-track {
+  position: relative;
+  height: 480px;
+}
+
+.obras-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.obras-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.obras-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit:contain
+}
+
+.obras-slide figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 14px 20px;
+  background: linear-gradient(0deg, rgba(15, 10, 8, 0.75), transparent);
+  color: var(--cream);
+  font-size: 0.85rem;
+}
+
+.obras-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(246, 241, 231, 0.5);
+  background: rgba(28, 19, 16, 0.35);
+  color: var(--cream);
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.obras-nav:hover { background: rgba(28, 19, 16, 0.65); }
+.obras-prev { left: 20px; }
+.obras-next { right: 20px; }
+
+@media (max-width: 860px) {
+  .artista-biografia .wrap {
+    grid-template-columns: 1fr;
+  }
+  .obras-track { height: 300px; }
+}

@@ -1,0 +1,176 @@
+/* Estilos das páginas de movimento — usado com ../style.css */
+
+.movimento-hero {
+  padding: 60px 0 0;
+}
+
+.movimento-hero .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.voltar {
+  display: inline-block;
+  margin-bottom: 26px;
+  font-size: 0.9rem;
+  color: var(--oxblood);
+  border-bottom: 1px solid transparent;
+}
+
+.voltar:hover,
+.voltar:focus-visible {
+  border-color: var(--oxblood);
+}
+
+.movimento-era {
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: 0.92rem;
+  margin: 0 0 30px;
+}
+
+.movimento-titulo {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  color: var(--oxblood);
+  margin: 0 0 6px;
+}
+
+.movimento-subtitulo {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  margin: 0 0 20px;
+}
+
+.movimento-texto p {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0 0 18px;
+  max-width: 54ch;
+}
+
+.movimento-imagem {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 34px rgba(28, 19, 16, 0.2);
+}
+
+.movimento-imagem img {
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
+  object-fit: cover;
+}
+
+.proximo-movimento {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--oxblood);
+  font-weight: 500;
+}
+
+.proximo-movimento .arrow {
+  animation: arrow-blink 1.6s ease-in-out infinite;
+}
+
+/* ---------- Na Arte ---------- */
+
+.na-arte {
+  padding: 100px 0 90px;
+}
+
+.na-arte h2 {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--ink);
+  margin: 0 0 40px;
+}
+
+.na-arte-texto {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.na-arte-texto p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin: 0 0 20px;
+}
+
+/* ---------- Artistas ---------- */
+
+.artistas {
+  padding: 0 0 100px;
+}
+
+.artistas-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 34px;
+}
+
+.artistas-topo h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--ink);
+  margin: 0;
+}
+
+.artistas-icone {
+  color: var(--oxblood);
+}
+
+.artistas-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 480px;
+}
+
+.artistas-lista li {
+  border-bottom: 1px solid var(--line);
+}
+
+.artistas-lista li:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.artistas-lista a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 4px;
+  font-size: 1.02rem;
+  color: var(--ink);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.artistas-lista a::before {
+  content: '•';
+  color: var(--oxblood);
+}
+
+.artistas-lista a:hover,
+.artistas-lista a:focus-visible {
+  color: var(--oxblood);
+  padding-left: 10px;
+}
+
+@media (max-width: 860px) {
+  .movimento-hero .wrap {
+    grid-template-columns: 1fr;
+  }
+  .movimento-imagem img { min-height: 280px; }
+  .artistas-topo { align-items: flex-start; }
+}
